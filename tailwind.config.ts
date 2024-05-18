@@ -8,11 +8,23 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      backgroundColor: {
+        'primary': '#f7efd7',
+        'cream': '#FBF8EF',
+        'orange': '#ab530a',
       },
+      colors: {
+        'soft-grey': '#706F6B',
+        'off-black': '#3D3D3D',
+        'orange': '#ab530a'
+      },  
+      fontFamily: {
+        'tiempos-headline': ['Tiempos Headline', 'serif'],
+        'sf-mono': ['SF Mono', 'Menlo', 'monospace'],
+        'epilogue': ['Epilogue', 'sans-serif'],
+        'dm-sans': ['DM Sans', 'sans-serif'],
+        'bricolage-grotesque': ['Bricolage Grotesque', 'sans-serif'],
+      }, 
     },
   },
   plugins: [],
