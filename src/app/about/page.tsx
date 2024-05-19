@@ -9,7 +9,12 @@ export default function AboutPage() {
 
       <div className="flex flex-row justify-between w-3/5 mt-12 space-x-4">
         <div className="w-1/2 text-left">
-          <h2 className="gradient text-xl md:text-2xl font-tiempos-headline tracking-tight">
+          <h2 className="gradient text-xl md:text-2xl font-tiempos-headline tracking-tight"
+              style={{
+                background: "linear-gradient(to right, #e06c0d, #ab530a)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}>
             What I'm currently up to:
           </h2>
           <ul className="list-disc mt-4 space-y-2">
@@ -45,7 +50,12 @@ export default function AboutPage() {
           </ul>
         </div>
         <div className="w-1/2 text-left">
-          <h2 className="gradient text-xl md:text-2xl font-tiempos-headline tracking-tight">
+          <h2 className="gradient text-xl md:text-2xl font-tiempos-headline tracking-tight"
+              style={{
+                background: "linear-gradient(to right, #e06c0d, #ab530a)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}>
             What keeps me going:
           </h2>
           <ul className="list-disc mt-4 space-y-2">

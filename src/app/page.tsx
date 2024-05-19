@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -12,13 +13,32 @@ export default function Home() {
         style={{ width: "90%" }}
       >
         <p className="md:text-lg text-md font-dm-sans text-off-black text-center tracking-tight">
-          Software Developer and Computer Science + Finance at the University of
-          Waterloo
+          <span
+            className="font-bold italic"
+            style={{
+              background: "linear-gradient(to right, #e06c0d, #ab530a)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            CS + Finance
+          </span>{" "}
+          at the University of Waterloo!
         </p>
 
         <p className="md:text-lg text-md font-dm-sans text-off-black text-center tracking-tight">
-          Currently interning at Amazon as a Software Development Engineer in
-          Vancouver!
+          Currently interning at Amazon as a{" "}
+          <span
+            className="font-bold italic"
+            style={{
+              background: "linear-gradient(to right, #e06c0d, #ab530a)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Software Development Engineer
+          </span>{" "}
+          in Vancouver
         </p>
 
         <p className="md:text-lg text-md font-dm-sans text-off-black text-center tracking-tight">
@@ -43,6 +63,10 @@ export default function Home() {
           anywhere else
         </p>
       </div>
+
+      <div className="mt-12">
+          <Image src="/images/Soham.png" alt="Soham" width={600} height={600} className="rounded" />
+        </div>
     </div>
   );
 }

@@ -9,12 +9,20 @@
   src: url("/fonts/DMSans-Regular.ttf") format("truetype");
 }
 
-body {
-  cursor: url('/cursors/cursor.svg'), auto;
+@font-face {
+  font-family: "DM Sans";
+  font-style: italic;
+  font-weight: bold;
+  src: url("/fonts/DMSans-BoldItalic.ttf") format("truetype");
 }
 
-a, button {
-  cursor: url('/cursors/clickable-cursor.svg'), pointer;
+body {
+  cursor: url("/cursors/cursor.svg"), auto;
+}
+
+a,
+button {
+  cursor: url("/cursors/clickable-cursor.svg"), pointer;
 }
 
 @keyframes typewriter {

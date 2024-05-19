@@ -58,7 +58,7 @@ function GradientLink({
       const y = ((event.clientY - top) / height) * 100;
 
       setGradientStyle({
-        background: `radial-gradient(circle at ${x}% ${y}%, #bdd0de, #FFFDF5)`,
+        background: `radial-gradient(circle at ${x}% ${y}%, #bab2af, #FFFDF5)`,
       });
     }
   };
@@ -78,7 +78,7 @@ function GradientLink({
       <Link
         href={href}
         style={gradientStyle}
-        className="shadow-lg flex items-center space-x-1 md:space-x-2 py-2 px-2 pr-8 pr-2 group-hover:bg-gray-200 rounded-full transition-colors duration-500 ease-in-out"
+        className="shadow-lg flex items-center space-x-1 md:space-x-2 py-3 px-6 group-hover:bg-gray-200 rounded-full transition-colors duration-500 ease-in-out"
       >
         <Image
           src={imgSrc}

@@ -8,10 +8,13 @@ export default function WorkPage() {
       </div>
 
       <div className="mt-12 w-3/5 text-left">
-        <ul className="list-disc space-y-4 md:space-y-12">
+        <ul className="list-disc space-y-4 md:space-y-8">
           <li>
             <p className="tracking-tight font-dm-sans md:text-lg text-md">
-              <span className="font-bold">Software Development Engineering Intern</span> @
+              <span className="font-bold">
+                Software Development Engineering Intern
+              </span>{" "}
+              @
               <a
                 href="https://www.amazon.com/"
                 target="_blank"

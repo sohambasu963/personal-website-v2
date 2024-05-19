@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundColor: {
-        primary: "#f7efd7",
+        // primary: "#f7efd7",
+        primary: "#fce6c2",
         cream: "#FBF8EF",
         orange: "#ab530a",
       },
