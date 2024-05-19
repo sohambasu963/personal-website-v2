@@ -8,7 +8,7 @@ export default function Home() {
       </div>
 
       <div
-        className="md:w-4/5 flex flex-col items-center mt-16 space-y-4"
+        className="md:w-4/5 flex flex-col items-center mt-16 space-y-2"
         style={{ width: "90%" }}
       >
         <p className="md:text-lg text-md font-dm-sans text-off-black text-center tracking-tight">

@@ -6,7 +6,8 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Navbar() {
   return (
-    <div className="absolute top-24" style={{ top: "15%", left: "10%" }}>
+    // <div className="absolute" style={{ top: "15%", left: "10%" }}>
+    <div className="absolute top-0 left-0 md:top-[15%] md:left-[10%]">
       <ul className="flex flex-col space-y-1 md:space-y-6">
         <li className="group relative inline-flex">
           <GradientLink href="/" text="home" imgSrc="/images/house.png" />
@@ -77,10 +78,16 @@ function GradientLink({
       <Link
         href={href}
         style={gradientStyle}
-        className="shadow-lg flex items-center space-x-1 md:space-x-2 py-2 px-2 pr-8 md:pr-2 group-hover:bg-gray-200 rounded-full transition-colors duration-500 ease-in-out"
+        className="shadow-lg flex items-center space-x-1 md:space-x-2 py-2 px-2 pr-8 pr-2 group-hover:bg-gray-200 rounded-full transition-colors duration-500 ease-in-out"
       >
-        <Image src={imgSrc} alt={text} width={24} height={24} />
-        <span className="text-orange font-sf-mono uppercase font-bold">
+        <Image
+          src={imgSrc}
+          alt={text}
+          width={24}
+          height={24}
+          className="md:w-6 md:h-6 w-5 h-5"
+        />
+        <span className="text-orange font-sf-mono uppercase font-bold md:text-md text-sm">
           {text}
         </span>
       </Link>
