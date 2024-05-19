@@ -6,7 +6,6 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Navbar() {
   return (
-    // <div className="absolute" style={{ top: "15%", left: "10%" }}>
     <div className="absolute top-0 left-0 md:top-[15%] md:left-[10%]">
       <ul className="flex flex-col space-y-1 md:space-y-6">
         <li className="group relative inline-flex">

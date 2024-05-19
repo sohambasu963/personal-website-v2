@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import ClientLayout from "./clientLayout";
+import Navbar from "./components/navbar";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Soham Basu",
@@ -15,11 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="bg-primary">
-      <head>
+      <body className={inter.className}>
         <link rel="icon" href="/images/SohamEmoji.png" sizes="any" />
-      </head>
-      <body>
-        <ClientLayout>{children}</ClientLayout>
+        <div className="w-4/5 mx-auto">
+          <Navbar />
+          {children}
+        </div>
       </body>
     </html>
   );
