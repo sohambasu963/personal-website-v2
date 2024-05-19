@@ -2,13 +2,13 @@ import React from "react";
 
 export default function Home() {
   return (
-    <div className="mt-12 flex flex-col items-center">
+    <div className="mt-16 flex flex-col items-center">
       <div className="typewriter">
         <h1 className="text-4xl font-tiempos-headline">Hi, I'm Soham!</h1>
       </div>
 
       <div
-        className="md:w-4/5 flex flex-col items-center mt-16 space-y-2"
+        className="md:w-4/5 flex flex-col items-center mt-12 space-y-2"
         style={{ width: "90%" }}
       >
         <p className="md:text-lg text-md font-dm-sans text-off-black text-center tracking-tight">

@@ -2,13 +2,28 @@ import React from "react";
 
 export default function WorkPage() {
   return (
-    <div className="mt-12 flex flex-col items-center">
+    <div className="mt-16 flex flex-col items-center">
       <div className="typewriter">
         <h1 className="text-4xl font-tiempos-headline">Work</h1>
       </div>
 
-      <div className="mt-8 w-3/5 text-left">
+      <div className="mt-12 w-3/5 text-left">
         <ul className="list-disc space-y-4 md:space-y-12">
+          <li>
+            <p className="tracking-tight font-dm-sans md:text-lg text-md">
+              <span className="font-bold">Software Development Engineering Intern</span> @
+              <a
+                href="https://www.amazon.com/"
+                target="_blank"
+                className="border-b-2 border-orange hover:bg-orange hover:text-white px-1 transition duration-500 ease-in-out"
+              >
+                Amazon
+              </a>
+            </p>
+            <p className="tracking-tight font-dm-sans text-off-black md:text-lg text-md mt-1 md:mt-2">
+              Developed tools that process Amazon credit card transactions
+            </p>
+          </li>
           <li>
             <p className="tracking-tight font-dm-sans md:text-lg text-md">
               <span className="font-bold">Full Stack Engineering Intern</span> @

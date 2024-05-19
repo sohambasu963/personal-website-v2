@@ -2,12 +2,12 @@ import React from "react";
 
 export default function AboutPage() {
   return (
-    <div className="mt-12 flex flex-col items-center">
+    <div className="mt-16 flex flex-col items-center">
       <div className="typewriter">
         <h1 className="text-4xl font-tiempos-headline">About Me</h1>
       </div>
 
-      <div className="flex flex-row justify-between w-full mt-8 space-x-4">
+      <div className="flex flex-row justify-between w-3/5 mt-12 space-x-4">
         <div className="w-1/2 text-left">
           <h2 className="gradient text-xl md:text-2xl font-tiempos-headline tracking-tight">
             What I'm currently up to:

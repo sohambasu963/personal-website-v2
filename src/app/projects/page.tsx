@@ -2,12 +2,12 @@ import React from "react";
 
 export default function ProjectsPage() {
   return (
-    <div className="mt-12 flex flex-col items-center">
+    <div className="mt-16 flex flex-col items-center">
       <div className="typewriter">
         <h1 className="text-4xl font-tiempos-headline">Projects</h1>
       </div>
 
-      <div className="mt-8 mb-8 w-3/5 text-left">
+      <div className="mt-12 mb-8 w-3/5 text-left">
         <a
           href="https://www.socratica.info/"
           target="_blank"
