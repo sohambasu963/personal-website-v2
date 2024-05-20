@@ -65,8 +65,14 @@ export default function Home() {
       </div>
 
       <div className="mt-12">
-          <Image src="/images/Soham.png" alt="Soham" width={450} height={450} className="rounded" />
-        </div>
+        <Image
+          src="/images/Soham.png"
+          alt="Soham"
+          width={450}
+          height={450}
+          className="rounded"
+        />
+      </div>
     </div>
   );
 }

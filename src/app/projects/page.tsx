@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export default function ProjectsPage() {
   return (
@@ -20,7 +20,8 @@ export default function ProjectsPage() {
               </a>
             </p>
             <p className="tracking-tight font-dm-sans text-off-black md:text-lg text-md mt-1 md:mt-2">
-              Built a website for Socratica, with a map that tracks nodes from around the world
+              Built a website for Socratica, with a map that tracks nodes from
+              around the world
             </p>
           </li>
           <li>
@@ -34,7 +35,8 @@ export default function ProjectsPage() {
               </a>
             </p>
             <p className="tracking-tight font-dm-sans text-off-black md:text-lg text-md mt-1 md:mt-2">
-              Built an app that allows users to generate and export custom invoices
+              Built an app that allows users to generate and export custom
+              invoices
             </p>
           </li>
           <li>
@@ -62,7 +64,8 @@ export default function ProjectsPage() {
               </a>
             </p>
             <p className="tracking-tight font-dm-sans text-off-black md:text-lg text-md mt-1 md:mt-2">
-              Created an app that uses a picture of your meal to identify its nutritional value
+              Created an app that uses a picture of your meal to identify its
+              nutritional value
             </p>
           </li>
           <li>
@@ -76,7 +79,8 @@ export default function ProjectsPage() {
               </a>
             </p>
             <p className="tracking-tight font-dm-sans text-off-black md:text-lg text-md mt-1 md:mt-2">
-              Developed an AI agent that solves assignments from MIT OpenCourseWare (won our team a hackathon!)
+              Developed an AI agent that solves assignments from MIT
+              OpenCourseWare (won our team a hackathon!)
             </p>
           </li>
         </ul>

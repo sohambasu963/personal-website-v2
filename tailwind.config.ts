@@ -17,7 +17,7 @@ const config: Config = {
       colors: {
         "soft-grey": "#706F6B",
         "off-black": "#3D3D3D",
-        "orange": "#ab530a"
+        orange: "#ab530a",
       },
       fontFamily: {
         "tiempos-headline": ["Tiempos Headline", "serif"],
