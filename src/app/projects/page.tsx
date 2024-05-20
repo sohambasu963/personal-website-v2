@@ -7,7 +7,7 @@ export default function ProjectsPage() {
         <h1 className="text-4xl font-tiempos-headline">Projects</h1>
       </div>
 
-      <div className="mt-12 w-3/5 text-left">
+      <div className="mt-12 md:w-3/5 w-full text-left">
         <ul className="list-disc space-y-4 md:space-y-8">
           <li>
             <p className="tracking-tight font-dm-sans md:text-lg text-md">

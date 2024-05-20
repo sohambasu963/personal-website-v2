@@ -6,8 +6,8 @@ import { useState, useEffect, useRef } from "react";
 
 export default function Navbar() {
   return (
-    <div className="absolute top-0 left-0 md:top-[15%] md:left-[10%]">
-      <ul className="flex flex-col space-y-1 md:space-y-6">
+    <div className="absolute top-2 left-0 md:top-[15%] md:left-[10%] ml-2">
+      <ul className="flex md:flex-col flex-row space-x-2 md:space-x-0 md:space-y-6">
         <li className="group relative inline-flex">
           <GradientLink href="/" text="home" imgSrc="/images/house.png" />
         </li>
@@ -57,7 +57,7 @@ function GradientLink({
       const y = ((event.clientY - top) / height) * 100;
 
       setGradientStyle({
-        background: `radial-gradient(circle at ${x}% ${y}%, #bab2af, #FFFDF5)`,
+        background: `radial-gradient(circle at ${x}% ${y}%, #dbd2ce, #FFFDF5)`,
       });
     }
   };
@@ -77,7 +77,7 @@ function GradientLink({
       <Link
         href={href}
         style={gradientStyle}
-        className="shadow-lg flex items-center space-x-1 md:space-x-2 py-3 px-6 group-hover:bg-gray-200 rounded-full transition-colors duration-500 ease-in-out"
+        className="shadow-lg flex items-center space-x-1 md:space-x-2 md:py-3 md:px-6 py-1.5 px-3 group-hover:bg-gray-200 rounded-full transition-colors duration-500 ease-in-out"
       >
         <Image
           src={imgSrc}
