@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="mt-16 flex flex-col items-center">
       <div className="typewriter">
-        <h1 className="text-4xl font-tiempos-headline">Hi, I'm Soham!</h1>
+        <h1 className="text-4xl font-tiempos-headline">Hi, I&apos;m Soham!</h1>
       </div>
 
       <div

@@ -17,7 +17,7 @@ export default function AboutPage() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            What I'm currently up to:
+            What I&apos;m currently up to:
           </h2>
           <ul className="list-disc mt-4 space-y-2">
             <li className="tracking-tight font-dm-sans text-off-black md:text-lg text-md">
