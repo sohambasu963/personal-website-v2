@@ -77,7 +77,7 @@ function GradientLink({
       <Link
         href={href}
         style={gradientStyle}
-        className="shadow-lg flex items-center space-x-1 md:space-x-2 md:py-3 md:px-6 py-1.5 px-3 group-hover:bg-gray-200 rounded-full transition-colors duration-500 ease-in-out"
+        className="shadow-lg flex items-center space-x-1 md:space-x-2 md:py-3 md:px-6 py-1.5 px-3 bg-[#edebe1] group-hover:bg-gray-200 rounded-full transition-colors duration-500 ease-in-out"
       >
         <Image
           src={imgSrc}
