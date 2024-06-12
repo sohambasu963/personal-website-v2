@@ -32,6 +32,13 @@ export default function Navbar() {
             imgSrc="/images/books.png"
           />
         </li>
+        <li className="group relative inline-flex">
+          <GradientLink
+            href="/investing"
+            text="investing"
+            imgSrc="/images/investing.png"
+          />
+        </li>
       </ul>
     </div>
   );

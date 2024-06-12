@@ -24,7 +24,8 @@ export default function WorkPage() {
               </a>
             </p>
             <p className="tracking-tight font-dm-sans text-off-black md:text-lg text-md mt-1 md:mt-2">
-              Developed software that supports Amazon Credit Cards in the Payments org
+              Developed software that supports Amazon Credit Cards in the
+              Payments org
             </p>
           </li>
           <li>

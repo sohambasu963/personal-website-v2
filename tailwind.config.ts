@@ -24,6 +24,7 @@ const config: Config = {
         "sf-mono": ["SF Mono", "Menlo", "monospace"],
         epilogue: ["Epilogue", "sans-serif"],
         "dm-sans": ["DM Sans", "sans-serif"],
+        "dm-serif": ["DM Serif", "serif"],
         "bricolage-grotesque": ["Bricolage Grotesque", "sans-serif"],
       },
     },
