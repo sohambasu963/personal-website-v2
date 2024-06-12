@@ -23,10 +23,10 @@ ChartJS.register(
 );
 
 function calculateInvestmentGrowth(
-  startAge,
-  initialInvestment,
-  monthlyContribution,
-  annualReturnRate,
+  startAge: number,
+  initialInvestment: number,
+  monthlyContribution: number,
+  annualReturnRate: number,
   endAge = 65,
 ) {
   const years = endAge - startAge;
@@ -47,6 +47,9 @@ function calculateInvestmentGrowth(
 export default function InvestmentChart({
   monthlyContribution,
   annualReturnRate,
+}: {
+  monthlyContribution: number;
+  annualReturnRate: number;
 }) {
   const initialInvestment = 0;
   const endAge = 65;
