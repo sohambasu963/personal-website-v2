@@ -3,43 +3,64 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./navbar.module.css";
 import { useState, useEffect, useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 
 export default function Navbar() {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const [isMobileNavbarOpen, setIsMobileNavbarOpen] = useState(false);
+
   return (
-    <div className="absolute top-2 left-0 md:top-[15%] md:left-[10%] ml-2">
-      <ul className="flex md:flex-col flex-row space-x-2 md:space-x-0 md:space-y-6">
-        <li className="group relative inline-flex">
-          <GradientLink href="/" text="home" imgSrc="/images/house.png" />
-        </li>
-        <li className="group relative inline-flex">
-          <GradientLink
-            href="/about"
-            text="about"
-            imgSrc="/images/SohamEmoji.png"
-          />
-        </li>
-        <li className="group relative inline-flex">
-          <GradientLink
-            href="/work"
-            text="work"
-            imgSrc="/images/desktop_computer.png"
-          />
-        </li>
-        <li className="group relative inline-flex">
-          <GradientLink
-            href="/projects"
-            text="projects"
-            imgSrc="/images/books.png"
-          />
-        </li>
-        <li className="group relative inline-flex">
-          <GradientLink
-            href="/investing"
-            text="investing"
-            imgSrc="/images/investing.png"
-          />
-        </li>
-      </ul>
+    <div>
+      {isMobile && (
+        <div className="absolute top-5 right-5 z-30">
+          <button
+            className="w-10 h-10 bg-black rounded-full flex flex-col justify-center items-center"
+            onClick={() => {
+              setIsMobileNavbarOpen(!isMobileNavbarOpen);
+            }}
+          >
+            <div className="w-3 h-0.5 bg-white mb-1" />
+            <div className="w-3 h-0.5 bg-white" />
+          </button>
+        </div>
+      )}
+      {(isMobileNavbarOpen || !isMobile) && (
+        <div className="absolute top-2 left-0 md:top-[15%] md:left-[10%] ml-2">
+          <ul className="flex flex-col space-y-6">
+            <li className="group relative inline-flex">
+              <GradientLink href="/" text="home" imgSrc="/images/house.png" />
+            </li>
+            <li className="group relative inline-flex">
+              <GradientLink
+                href="/about"
+                text="about"
+                imgSrc="/images/SohamEmoji.png"
+              />
+            </li>
+            <li className="group relative inline-flex">
+              <GradientLink
+                href="/work"
+                text="work"
+                imgSrc="/images/desktop_computer.png"
+              />
+            </li>
+            <li className="group relative inline-flex">
+              <GradientLink
+                href="/projects"
+                text="projects"
+                imgSrc="/images/books.png"
+              />
+            </li>
+            <li className="group relative inline-flex">
+              <GradientLink
+                href="/investing"
+                text="investing"
+                imgSrc="/images/investing.png"
+              />
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
