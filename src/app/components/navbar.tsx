@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <div>
       {isMobile && (
-        <div className="absolute top-5 right-5 z-30">
+        <div className="absolute top-1 right-1 z-30">
           <button
             className="w-10 h-10 bg-black rounded-full flex flex-col justify-center items-center"
             onClick={() => {

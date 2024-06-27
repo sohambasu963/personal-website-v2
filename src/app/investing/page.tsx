@@ -11,11 +11,11 @@ export default function Investing() {
       <div className="typewriter">
         <h1 className="text-4xl font-tiempos-headline">Investing</h1>
       </div>
-      <h2 className="text-md font-dm-sans">
+      <h2 className="md:text-md text-xs font-dm-sans">
         My hot takes on how the average young adult should invest
       </h2>
 
-      <div className="mt-16 md:w-3/5 w-full text-left">
+      <div className="md:mt-16 mt-8 md:w-3/5 w-full text-left">
         {/* <p>BEFORE you start investing, do these things first, they are way more beneficial to your financial well-being: </p> */}
         <p className="text-center tracking-tight font-dm-sans md:text-2xl text-xl">
           Gambling is{" "}
@@ -37,7 +37,7 @@ export default function Investing() {
           whether the stock market will go up, down, or sideways.
         </p>
 
-        <p className="text-center mt-16 tracking-tight font-dm-sans md:text-2xl text-xl">
+        <p className="text-center md:mt-16 mt-8 tracking-tight font-dm-sans md:text-2xl text-xl">
           Speculation is{" "}
           <span
             className="font-bold italic"
@@ -57,7 +57,7 @@ export default function Investing() {
           only speculate with money you&apos;re willing to lose.
         </p>
 
-        <p className="text-center mt-16 tracking-tight font-dm-sans md:text-4xl text-xl w-[150%] ml-[-25%]">
+        <p className="text-center md:mt-16 mt-8 tracking-tight font-dm-sans md:text-4xl text-xl md:w-[150%] md:ml-[-25%] w-full ml-0">
           Most of your money probably belongs in a{" "}
           <span
             className="font-bold italic"
@@ -76,11 +76,11 @@ export default function Investing() {
           With that said...
         </p> */}
 
-        <p className="text-center mt-32 tracking-tight font-dm-sans md:text-2xl text-lg">
+        <p className="text-center md:mt-32 mt-16 tracking-tight font-dm-sans md:text-2xl text-md">
           People often delay investing, here&apos;s why you should start early
         </p>
 
-        <div className="mt-4 mb-4 flex flex-row justify-between w-full">
+        <div className="mt-4 mb-4 flex flex-row justify-between w-full mx-auto">
           <div className="flex flex-col items-center">
             <p className="tracking-tight font-dm-sans md:text-lg text-md">
               Monthly Contribution:
@@ -109,12 +109,12 @@ export default function Investing() {
           annualReturnRate={annualReturnRate / 100}
         />
 
-        <p className="tracking-tight font-dm-sans md:text-md text-md">
+        <p className="tracking-tight font-dm-sans md:text-md text-xs">
           The chart above shows the power of compound interest. The earlier you
           start investing, the more you&apos;ll have in the future.
         </p>
 
-        <p className="text-center mt-24 tracking-tight font-dm-sans md:text-2xl text-xl">
+        <p className="text-center md:mt-24 mt-12 tracking-tight font-dm-sans md:text-2xl text-xl">
           How can I achieve those{" "}
           <span
             className="font-bold italic"
@@ -131,14 +131,14 @@ export default function Investing() {
         <p className="text-center tracking-tight font-dm-sans md:text-lg text-md">
           Invest early and consistently -- without trying to time the market.
         </p>
-        <p className="mt-4 tracking-tight font-dm-sans md:text-lg text-md">
+        <p className="md:mt-4 mt-2 tracking-tight font-dm-sans md:text-lg text-md">
           The best advice is to start out with an all-equity ETF portfolio and
           slowly transition to a more bond-heavy portfolio as you age. For
           Canadians, just buy VEQT or XEQT, or opt for VGRO or XGRO for a
           slightly more balanced portfolio.
         </p>
 
-        <p className="text-center mt-24 tracking-tight font-dm-sans md:text-2xl text-xl">
+        <p className="text-center md:mt-24 mt-12 tracking-tight font-dm-sans md:text-2xl text-xl">
           But what are equities and bonds?
         </p>
         <p className="tracking-tight font-dm-sans md:text-lg text-md">
@@ -147,7 +147,7 @@ export default function Investing() {
           higher returns, while bonds are safer but have lower returns.
         </p>
 
-        <p className="text-center mt-24 tracking-tight font-dm-sans md:text-2xl text-xl">
+        <p className="text-center md:mt-24 mt-12 tracking-tight font-dm-sans md:text-2xl text-xl">
           <span
             className="font-bold italic"
             style={{
@@ -162,20 +162,20 @@ export default function Investing() {
         <p className="text-center tracking-tight font-dm-sans md:text-lg text-md">
           Be very careful about investing anything you&apos;ll need in 3 years
         </p>
-        <p className="mt-4 tracking-tight font-dm-sans md:text-lg text-md">
+        <p className="md:mt-4 mt-2 tracking-tight font-dm-sans md:text-lg text-md">
           Risk is the probability of losing money. Younger people can afford to
           take on more risk as they have more time to wait for the market to
           recover. That&apos;s why an equity-heavy portfolio is recommended for
           young adults.
         </p>
 
-        <p className="mt-4 tracking-tight font-dm-sans md:text-lg text-md">
+        <p className="md:mt-4 mt-2 tracking-tight font-dm-sans md:text-lg text-md">
           However, with that said, you should never invest money you need in the
           short term. If you need the money in 3 years, it&apos;s best to keep
           it in a high-interest savings account.
         </p>
 
-        <p className="text-center mt-16 tracking-tight font-dm-sans md:text-2xl text-xl">
+        <p className="text-center md:mt-16 mt-8 tracking-tight font-dm-sans md:text-2xl text-xl">
           Good luck with your investing journey!
         </p>
         <p className="text-center tracking-tight font-dm-sans md:text-lg text-xl">
