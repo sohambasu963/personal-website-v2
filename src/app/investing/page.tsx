@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import InvestmentChart from "../components/InvestmentChart";
 
 export default function Investing() {
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [monthlyContribution, setMonthlyContribution] = useState(1000);
   const [annualReturnRate, setAnnualReturnRate] = useState(11);
 
@@ -11,7 +13,7 @@ export default function Investing() {
       <div className="typewriter">
         <h1 className="text-4xl font-tiempos-headline">Investing</h1>
       </div>
-      <h2 className="md:text-md text-xs font-dm-sans">
+      <h2 className="text-md font-dm-sans">
         My hot takes on how the average young adult should invest
       </h2>
 
@@ -72,50 +74,52 @@ export default function Investing() {
           .
         </p>
 
-        {/* <p className="mt-16 tracking-tight font-dm-sans md:text-md text-xl">
-          With that said...
-        </p> */}
-
-        <p className="text-center md:mt-32 mt-16 tracking-tight font-dm-sans md:text-2xl text-md">
-          People often delay investing, here&apos;s why you should start early
-        </p>
-
-        <div className="mt-4 mb-4 flex flex-row justify-between w-full mx-auto">
-          <div className="flex flex-col items-center">
-            <p className="tracking-tight font-dm-sans md:text-lg text-md">
-              Monthly Contribution:
+        {!isMobile && (
+          <div>
+            <p className="text-center md:mt-32 mt-16 tracking-tight font-dm-sans md:text-2xl text-md">
+              People often delay investing, here&apos;s why you should start early
             </p>
-            <input
-              value={monthlyContribution}
-              onChange={(e) => setMonthlyContribution(Number(e.target.value))}
-              className="p-2 border border-gray-300 rounded"
-            />
-          </div>
 
-          <div className="flex flex-col items-center">
-            <p className="tracking-tight font-dm-sans md:text-lg text-md">
-              Annual Return Rate (%):
+            <div className="mt-4 mb-4 flex flex-row justify-between w-full mx-auto">
+              <div className="flex flex-col items-center">
+                <p className="tracking-tight font-dm-sans md:text-lg text-md">
+                  Monthly Contribution:
+                </p>
+                <input
+                  value={monthlyContribution}
+                  onChange={(e) => setMonthlyContribution(Number(e.target.value))}
+                  className="p-2 border border-gray-300 rounded"
+                />
+              </div>
+
+              <div className="flex flex-col items-center">
+                <p className="tracking-tight font-dm-sans md:text-lg text-md">
+                  Annual Return Rate (%):
+                </p>
+                <input
+                  value={annualReturnRate}
+                  onChange={(e) => setAnnualReturnRate(Number(e.target.value))}
+                  className="p-2 border border-gray-300 rounded"
+                />
+              </div>
+            </div>
+
+            <InvestmentChart
+              monthlyContribution={monthlyContribution}
+              annualReturnRate={annualReturnRate / 100}
+            />
+
+            <p className="tracking-tight font-dm-sans text-md">
+              The chart above shows the power of compound interest. The earlier you
+              start investing, the more you&apos;ll have in the future.
             </p>
-            <input
-              value={annualReturnRate}
-              onChange={(e) => setAnnualReturnRate(Number(e.target.value))}
-              className="p-2 border border-gray-300 rounded"
-            />
           </div>
-        </div>
+        )}
 
-        <InvestmentChart
-          monthlyContribution={monthlyContribution}
-          annualReturnRate={annualReturnRate / 100}
-        />
-
-        <p className="tracking-tight font-dm-sans md:text-md text-xs">
-          The chart above shows the power of compound interest. The earlier you
-          start investing, the more you&apos;ll have in the future.
-        </p>
 
         <p className="text-center md:mt-24 mt-12 tracking-tight font-dm-sans md:text-2xl text-xl">
-          How can I achieve those{" "}
+          How can I achieve
+          {" "}
           <span
             className="font-bold italic"
             style={{
@@ -124,7 +128,7 @@ export default function Investing() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            juicy
+            high
           </span>{" "}
           returns?
         </p>
@@ -175,19 +179,8 @@ export default function Investing() {
           it in a high-interest savings account.
         </p>
 
-        <p className="text-center md:mt-16 mt-8 tracking-tight font-dm-sans md:text-2xl text-xl">
+        <p className="text-center md:mt-16 mt-8 tracking-tight font-dm-sans md:text-2xl text-lg">
           Good luck with your investing journey!
-        </p>
-        <p className="text-center tracking-tight font-dm-sans md:text-lg text-xl">
-          Reach out{" "}
-          <a
-            href="https://twitter.com/sohambasu963"
-            target="_blank"
-            className="border-b-2 border-orange hover:bg-orange hover:text-white px-1 transition duration-500 ease-in-out"
-          >
-            @sohambasu963
-          </a>{" "}
-          if you have any questions
         </p>
       </div>
     </div>
