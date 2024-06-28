@@ -1,12 +1,63 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import InvestmentChart from "../components/InvestmentChart";
+import PerformanceChart from "../components/PerformanceChart";
 
 export default function Investing() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [monthlyContribution, setMonthlyContribution] = useState(1000);
-  const [annualReturnRate, setAnnualReturnRate] = useState(11);
+  const [annualReturnRate, setAnnualReturnRate] = useState(8);
+
+  const [data, setData] = useState<{
+    speculator: number[];
+    etfInvestor: number[];
+  }>({ speculator: [], etfInvestor: [] });
+  const [labels, setLabels] = useState<number[]>([]);
+
+  const generateRandomReturns = (
+    years: number,
+    initialInvestment: number,
+    avgReturn: number,
+    stdDev: number,
+  ) => {
+    let values = [initialInvestment];
+    for (let i = 1; i <= years; i++) {
+      const randomReturn = Math.random() * (2 * stdDev) - stdDev + avgReturn;
+      const newValue = values[i - 1] * (1 + randomReturn);
+      values.push(newValue);
+    }
+    return values;
+  };
+
+  const simulatePerformance = () => {
+    const years = 50;
+    const initialInvestment = 10000;
+    const speculatorAvgReturn = 0.06;
+    const speculatorStdDev = 0.22;
+    const etfAvgReturn = 0.08;
+    const etfStdDev = 0.15;
+
+    const speculatorData = generateRandomReturns(
+      years,
+      initialInvestment,
+      speculatorAvgReturn,
+      speculatorStdDev,
+    );
+    const etfData = generateRandomReturns(
+      years,
+      initialInvestment,
+      etfAvgReturn,
+      etfStdDev,
+    );
+
+    setData({ speculator: speculatorData, etfInvestor: etfData });
+    setLabels(Array.from({ length: years + 1 }, (_, i) => i));
+  };
+
+  useEffect(() => {
+    simulatePerformance();
+  }, []);
 
   return (
     <div className="mt-16 mb-8 flex flex-col items-center">
@@ -18,7 +69,6 @@ export default function Investing() {
       </h2>
 
       <div className="md:mt-16 mt-8 md:w-3/5 w-full text-left">
-        {/* <p>BEFORE you start investing, do these things first, they are way more beneficial to your financial well-being: </p> */}
         <p className="text-center tracking-tight font-dm-sans md:text-2xl text-xl">
           Gambling is{" "}
           <span
@@ -59,6 +109,30 @@ export default function Investing() {
           only speculate with money you&apos;re willing to lose.
         </p>
 
+        {!isMobile && (
+          <div className="mt-16 mb-16">
+            <div className="flex justify-center">
+              <button
+                onClick={simulatePerformance}
+                className="bg-green-700 hover:bg-green-600 px-4 py-2 text-white rounded"
+              >
+                Simulate
+              </button>
+            </div>
+            <p className="mt-4 tracking-tight font-dm-sans text-md">
+              This chart allows you to simulate how a speculator might perform
+              vs. an ETF investor.{" "}
+            </p>
+            <p className="mt-2 tracking-tight font-dm-sans text-md">
+              Historical data suggests that the ETF investor will have a
+              slightly higher average return, but lower standard deviation. As a
+              result, the speculator does sometimes outperform the ETF investor,
+              but on average, the ETF investor performs better with less risk.
+            </p>
+            <PerformanceChart data={data} labels={labels} />
+          </div>
+        )}
+
         <p className="text-center md:mt-16 mt-8 tracking-tight font-dm-sans md:text-4xl text-xl md:w-[150%] md:ml-[-25%] w-full ml-0">
           Most of your money probably belongs in a{" "}
           <span
@@ -77,7 +151,8 @@ export default function Investing() {
         {!isMobile && (
           <div>
             <p className="text-center md:mt-32 mt-16 tracking-tight font-dm-sans md:text-2xl text-md">
-              People often delay investing, here&apos;s why you should start early
+              People often delay investing, here&apos;s why you should start
+              early
             </p>
 
             <div className="mt-4 mb-4 flex flex-row justify-between w-full mx-auto">
@@ -87,7 +162,9 @@ export default function Investing() {
                 </p>
                 <input
                   value={monthlyContribution}
-                  onChange={(e) => setMonthlyContribution(Number(e.target.value))}
+                  onChange={(e) =>
+                    setMonthlyContribution(Number(e.target.value))
+                  }
                   className="p-2 border border-gray-300 rounded"
                 />
               </div>
@@ -110,16 +187,14 @@ export default function Investing() {
             />
 
             <p className="tracking-tight font-dm-sans text-md">
-              The chart above shows the power of compound interest. The earlier you
-              start investing, the more you&apos;ll have in the future.
+              The chart above shows the power of compound interest. The earlier
+              you start investing, the more you&apos;ll have in the future.
             </p>
           </div>
         )}
 
-
         <p className="text-center md:mt-24 mt-12 tracking-tight font-dm-sans md:text-2xl text-xl">
-          How can I achieve
-          {" "}
+          How can I achieve{" "}
           <span
             className="font-bold italic"
             style={{
@@ -164,7 +239,8 @@ export default function Investing() {
           </span>
         </p>
         <p className="text-center tracking-tight font-dm-sans md:text-lg text-md">
-          Be very careful about investing anything you&apos;ll need in 3 years
+          Be very careful about investing anything you&apos;ll need within the
+          next few years
         </p>
         <p className="md:mt-4 mt-2 tracking-tight font-dm-sans md:text-lg text-md">
           Risk is the probability of losing money. Younger people can afford to
