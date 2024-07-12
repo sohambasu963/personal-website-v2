@@ -56,7 +56,7 @@ export default function MacTerminal() {
       </div>
       <div
         ref={terminalRef}
-        className="p-4 text-white h-[28rem] overflow-y-auto"
+        className="p-4 text-white md:h-[28rem] h-[24rem] overflow-y-auto"
       >
         {output.map((line, index) => (
           <pre
@@ -78,6 +78,9 @@ export default function MacTerminal() {
           onChange={handleInputChange}
           className="flex-grow bg-transparent border-none outline-none text-white"
         />
+        <button type="submit" className="ml-2">
+          <img src="/images/send-button.png" alt="Send" className="w-6 h-6" />
+        </button>
       </form>
     </div>
   );
