@@ -58,6 +58,13 @@ export default function Navbar() {
                 imgSrc="/images/investing.png"
               />
             </li>
+            <li className="group relative inline-flex">
+              <GradientLink
+                href="/chatbot"
+                text="Soham-GPT"
+                imgSrc="/images/desktop_computer.png"
+              />
+            </li>
           </ul>
         </div>
       )}
