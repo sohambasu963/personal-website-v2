@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <link rel="icon" href="/images/SohamEmoji.png" sizes="any" />
         <div className="w-4/5 mx-auto">
+          <Analytics />
           <Navbar />
           {children}
         </div>
