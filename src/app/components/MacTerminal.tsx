@@ -1,11 +1,12 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import { decode } from "punycode";
 
 export default function MacTerminal() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState([
-    "$ SohamGPT: Hi, I'm Soham -- let's chat!",
+    { text: "Hi, I'm Soham -- let's chat. Ask me what I'm working on!", prefix: "$ SohamGPT: ", isAI: true },
   ]);
 
   const terminalRef = useRef<HTMLDivElement>(null);
@@ -16,27 +17,53 @@ export default function MacTerminal() {
 
   const submitMessage = async (message: string) => {
     try {
-      const serverAddress = process.env.NEXT_PUBLIC_SERVER_ADDRESS;
-      if (!serverAddress) {
-        throw new Error("Server address is not defined");
-      }
-      const res = await axios.get(serverAddress, { params: { message } });
-      setOutput([...output, `$ You: ${input}`, `$ SohamGPT: ${res.data}`]);
+        const serverAddress = process.env.NEXT_PUBLIC_SERVER_ADDRESS;
+        if (!serverAddress) {
+            throw new Error("Server address is not defined");
+        }
+
+        const response = await fetch(`${serverAddress}?message=${encodeURIComponent(message)}`, {
+            method: "GET",
+            headers: {
+                "Content-Type": "text/event-stream",
+            },
+        });
+        if (!response.body) {
+            throw new Error("Response body is null");
+        }
+
+        const reader = response.body
+          .pipeThrough(new TextDecoderStream())
+          .getReader();
+
+        let text = "";
+        while (true) {
+            const {value, done} = await reader.read();
+            if (done) break;
+            console.log("Chunk:", value);
+            text += value;
+            setOutput([...output,
+                { text: `${input}`, prefix: "$ You: ", isAI: false },
+                { text: `${text}`, prefix: "$ SohamGPT: ", isAI: true }
+            ]);
+        }
+
     } catch (error) {
-      console.error("There was an error sending the message!", error);
-      setOutput([
-        ...output,
-        `$ You: ${input}`,
-        `$ SohamGPT: ERROR -- Could not reach the server.`,
-      ]);
+        setOutput([
+            ...output,
+            { text: `${input}`, prefix: "$ You: ", isAI: false },
+            { text: `ERROR -- Could not reach the server.`, prefix: "$ SohamGPT: ", isAI: true }
+        ]);
     }
   };
 
   const handleFormSubmit = (e: any) => {
     e.preventDefault();
     if (!input.trim()) return;
-    setOutput([...output, `$ You: ${input}`]);
-
+    setOutput([...output, 
+        { text: `${input}`, prefix: "$ You: ", isAI: false },
+        { text: "", prefix: "$ SohamGPT: ", isAI: true }
+    ]);
     submitMessage(input);
     setInput("");
   };
@@ -63,7 +90,12 @@ export default function MacTerminal() {
             key={index}
             className={`font-sf-mono whitespace-pre-wrap break-words ${index % 2 === 1 ? "mt-4" : ""}`}
           >
-            {line}
+            <span className={`${line.isAI ? "text-green-500" : "text-blue-400"}`}>
+              {line.prefix}
+            </span>
+            <span className="text-white">
+              {line.text}
+            </span>
           </pre>
         ))}
       </div>
