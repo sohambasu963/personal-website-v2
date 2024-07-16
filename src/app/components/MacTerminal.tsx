@@ -62,7 +62,7 @@ export default function MacTerminal() {
     if (!input.trim()) return;
     setOutput([...output, 
         { text: `${input}`, prefix: "$ You: ", isAI: false },
-        { text: "", prefix: "$ SohamGPT: ", isAI: true }
+        { text: "...", prefix: "$ SohamGPT: ", isAI: true }
     ]);
     submitMessage(input);
     setInput("");
